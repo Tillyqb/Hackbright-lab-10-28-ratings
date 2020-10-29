@@ -1,3 +1,4 @@
 etc/
 *.pyc
 secrets.sh
+ideas.txt

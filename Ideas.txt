@@ -1,0 +1,24 @@
+CREATE TABLE users
+    login PRIMARY KEY
+    f_name
+    l_name
+    password
+    email
+
+
+
+CREATE TABLE ratings
+    id SERIAL PRIMARY KEY,
+    title
+    rating
+    user
+
+
+CREATE TABLE movies
+    title PRIMARY KEY
+    
+
+    (title.rating = AVG(SELECT rating FROM movies WHERE title = movie_id)
+
+
+movie id --> shared by ratings and movies (REVERENCES movies)

@@ -16,7 +16,24 @@ app.config['PRESERVE_CONTEXT_ON_EXCEPTION'] = True
 def homepage():
     """View homepage."""
 
-    return render_template('homepage.html')
+    return render_template('/homepage.html')
+
+@app.route('/movies')
+def movies():
+    """View all movies"""
+
+    all_movies = crud.display_movies()
+    return render_template('/all_movies.html',
+                            movies = all_movies)
+
+@app.route('/movies/<movie_id>')
+def show_movie(movie_id):
+    """Show details on a particular movie."""
+
+    movie = crud.get_movie_by_id(movie_id)
+
+    return render_template('movie_details.html', movie=movie)
+
 
 # Replace this with routes and view functions!
 

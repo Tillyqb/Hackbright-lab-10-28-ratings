@@ -5,9 +5,10 @@ from datetime import datetime
 
 db = SQLAlchemy()
 
+
+# Replace this with your code!
 class User(db.Model):
     """A user."""
-
     __tablename__ = 'users'
 
     user_id = db.Column(db.Integer, primary_key = True, autoincrement = True)
@@ -52,7 +53,7 @@ class Rating(db.Model):
     def __repr__(self):
         return f'<Rating rating_id = {self.rating_id} score = {self.score}>'
 
-    
+
 
 
 def connect_to_db(flask_app, db_uri='postgresql:///ratings', echo=True):
